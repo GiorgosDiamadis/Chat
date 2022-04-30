@@ -1,0 +1,40 @@
+version: "3.3"
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: backend
+    ports:
+      - "8080:8080"
+    volumes:
+      - "./backend:/usr/app"
+    networks:
+      - net
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend
+
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./frontend:/usr/app"
+    networks:
+      - net
+  db:
+    image: mongo
+    container_name: "database"
+    volumes:
+      - dbdata:/data/db
+    logging:
+      driver: none
+    networks:
+      - net
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+
+volumes:
+  dbdata:
+networks:
+  net:

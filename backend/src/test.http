@@ -1,0 +1,40 @@
+GET http://localhost:8080/rooms/
+Accept: application/json
+Authorization: Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjZkN2QyZDBkOGFmNjgwNjgwN2MwYjAiLCJpYXQiOjE2NTEzNDI2MzcsImV4cCI6MTY1MTM0NjIzN30.keGcIIhMRyR2_R-c4gVOfU1RFT5xx6iqORMCki0kr2M
+
+###
+POST http://localhost:8080/rooms/create
+Content-Type: application/json
+Authorization: Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjZkN2QyZDBkOGFmNjgwNjgwN2MwYjAiLCJpYXQiOjE2NTEzNDI2MzcsImV4cCI6MTY1MTM0NjIzN30.keGcIIhMRyR2_R-c4gVOfU1RFT5xx6iqORMCki0kr2M
+
+{
+  "name": "myroom23s3"
+}
+
+###
+
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{
+  "username": "georgeg6",
+  "password": "pass"
+}
+
+###
+GET http://localhost:8080/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MjRmNTFhYjcxZjJlNjBjMDZmMTQ1NTEiLCJpYXQiOjE2NDkzNjU0MTksImV4cCI6MTY0OTM2OTAxOX0.xYqT4YxBSKwW0eWvXIzynvB2weXptg3J5UElfG8x1Pc
+
+###
+POST http://localhost:8080/auth/register
+Content-Type: application/json
+
+{
+  "username": "george2",
+  "email": "diamantissgiorgos2@gmail.com",
+  "password": "pass",
+  "confirmPassword": "pass"
+}
+
+###
