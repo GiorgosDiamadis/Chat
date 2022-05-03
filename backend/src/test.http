@@ -1,14 +1,14 @@
 GET http://localhost:8080/rooms/
 Accept: application/json
-Authorization: Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjZkN2QyZDBkOGFmNjgwNjgwN2MwYjAiLCJpYXQiOjE2NTEzNDI2MzcsImV4cCI6MTY1MTM0NjIzN30.keGcIIhMRyR2_R-c4gVOfU1RFT5xx6iqORMCki0kr2M
+Authorization: Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdlb3JnZSIsIl9pZCI6IjYyNmQ3ZDJkMGQ4YWY2ODA2ODA3YzBiMCIsImlhdCI6MTY1MTQyNzM2OCwiZXhwIjoxNjUxNDMwOTY4fQ.wVv0LLGsk6cJTuskGwFn5-GoD3d7YiFCE9zyIlhpvVc
 
 ###
 POST http://localhost:8080/rooms/create
 Content-Type: application/json
-Authorization: Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjZkN2QyZDBkOGFmNjgwNjgwN2MwYjAiLCJpYXQiOjE2NTEzNDI2MzcsImV4cCI6MTY1MTM0NjIzN30.keGcIIhMRyR2_R-c4gVOfU1RFT5xx6iqORMCki0kr2M
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdlb3JnZTIiLCJfaWQiOiI2MjZkODU5YjMxMDcyY2IwZDhiYTRkOWEiLCJpYXQiOjE2NTE0MjY5MTYsImV4cCI6MTY1MTQzMDUxNn0.uIE6kR-tpUy7zFS_mESvMkO-ed97W0vtKyfQC3djP2c
 
 {
-  "name": "myroom23s3"
+  "name": "myrooms"
 }
 
 ###
@@ -17,7 +17,7 @@ POST http://localhost:8080/auth/login
 Content-Type: application/json
 
 {
-  "username": "georgeg6",
+  "username": "george",
   "password": "pass"
 }
 

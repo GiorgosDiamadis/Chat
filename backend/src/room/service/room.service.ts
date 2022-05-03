@@ -30,7 +30,6 @@ export class RoomService {
     }
 
     async getRoomsWith(userId: mongoose.Types.ObjectId): Promise<Room[]> {
-        const rooms = await this.roomModel.find({$or: [{adminUser: userId}, {participants: userId}]}).exec();
-        return rooms;
+        return await this.roomModel.find({$or: [{adminUser: userId}, {participants: userId}]}).exec();
     }
 }

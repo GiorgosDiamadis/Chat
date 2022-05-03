@@ -32,7 +32,12 @@ export class RoomController {
     async myRooms(@Request() request) {
         const userId = request.user.userId;
 
-        const rooms = await this.roomService.getRoomsWith(userId);
-        return rooms;
+        return await this.roomService.getRoomsWith(userId);
+    }
+
+    @Post('addUserToRoom')
+    @UseGuards(JwtAuthGuard)
+    async addUserToRoom(@Body() addToRoomDto:,@Request() request){
+
     }
 }
