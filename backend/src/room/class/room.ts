@@ -22,10 +22,10 @@ export class Room {
     }))
     dateCreated: Date;
 
-    @Prop({type: mongoose.Schema.Types.ObjectId, ref: 'User'})
+    @Prop({type: mongoose.Schema.Types.ObjectId, ref: 'User', path: 'user'})
     adminUser: User
 
-    @Prop([{type: mongoose.Schema.Types.ObjectId, ref: 'User'}])
+    @Prop([{type: mongoose.Schema.Types.ObjectId, ref: 'User', path: 'user'}])
     participants: User[];
 
 }

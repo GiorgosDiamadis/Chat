@@ -9,6 +9,10 @@ export class UsersService {
     constructor(@InjectModel(User.name) private userModel: Model<UserDocument>) {
     }
 
+    async findById(id: string): Promise<User> {
+        return this.userModel.findById(id).exec();
+
+    }
 
     async findOne(username: string): Promise<User> {
         return this.userModel.findOne({username: username}).exec();

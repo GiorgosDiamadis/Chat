@@ -1,11 +1,24 @@
 GET http://localhost:8080/rooms/
 Accept: application/json
-Authorization: Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdlb3JnZSIsIl9pZCI6IjYyNmQ3ZDJkMGQ4YWY2ODA2ODA3YzBiMCIsImlhdCI6MTY1MTQyNzM2OCwiZXhwIjoxNjUxNDMwOTY4fQ.wVv0LLGsk6cJTuskGwFn5-GoD3d7YiFCE9zyIlhpvVc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdlb3JnZSIsIl9pZCI6IjYyNzFiMGZmYTJiNGM4MzNlYjVmODE2OSIsImlhdCI6MTY1MTYxOTE2NiwiZXhwIjoxNjUxNjIyNzY2fQ.ONqmLu_JVEPQhapGMuxVdX_L9FpwDukiZ_YlyOxgEHU
 
 ###
+
+POST http://localhost:8080/rooms/addUserToRoom
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdlb3JnZTIiLCJfaWQiOiI2MjcxYjBlYmEyYjRjODMzZWI1ZjgxNjYiLCJpYXQiOjE2NTE2MjExNTYsImV4cCI6MTY1MTYyNDc1Nn0.1-b8ZQZZjPXiyXG6dwWU4t-ZwGD5bfaRIGU268Tzmxg
+
+{
+  "roomId": "6271b10ea2b4c833eb5f816c",
+  "userId": "6271b0ffa2b4c833eb5f8169"
+}
+
+###
+
+
 POST http://localhost:8080/rooms/create
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdlb3JnZTIiLCJfaWQiOiI2MjZkODU5YjMxMDcyY2IwZDhiYTRkOWEiLCJpYXQiOjE2NTE0MjY5MTYsImV4cCI6MTY1MTQzMDUxNn0.uIE6kR-tpUy7zFS_mESvMkO-ed97W0vtKyfQC3djP2c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjcxYjBlYmEyYjRjODMzZWI1ZjgxNjYiLCJpYXQiOjE2NTE2MTgwMjcsImV4cCI6MTY1MTYyMTYyN30.uNQ06K4l_TeD5vPAAKAyWb6E482-ArcU1NCaOFtfD_A
 
 {
   "name": "myrooms"
@@ -17,7 +30,7 @@ POST http://localhost:8080/auth/login
 Content-Type: application/json
 
 {
-  "username": "george",
+  "username": "george2",
   "password": "pass"
 }
 
@@ -31,8 +44,8 @@ POST http://localhost:8080/auth/register
 Content-Type: application/json
 
 {
-  "username": "george2",
-  "email": "diamantissgiorgos2@gmail.com",
+  "username": "george",
+  "email": "diamantissgiorgos@gmail.com",
   "password": "pass",
   "confirmPassword": "pass"
 }

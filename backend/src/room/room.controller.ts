@@ -4,6 +4,7 @@ import {JoiValidator} from "../pipes/joi.validator";
 import {createRoomSchemaValidator} from "./dto/createRoom-schema.validator";
 import {JwtAuthGuard} from "../auth/guards/jwt-auth.guard";
 import {RoomService} from "./service/room.service";
+import {AddToRoomDto} from "./dto/addToRoom-dto";
 
 @Controller('rooms')
 export class RoomController {
@@ -37,7 +38,10 @@ export class RoomController {
 
     @Post('addUserToRoom')
     @UseGuards(JwtAuthGuard)
-    async addUserToRoom(@Body() addToRoomDto:,@Request() request){
-
+    async addUserToRoom(@Body() addToRoom: AddToRoomDto, @Request() request) {
+        const {username} = request.user;
+        await this.roomService.addUserToRoom(addToRoom, username);
     }
+
+
 }
