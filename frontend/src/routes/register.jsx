@@ -1,5 +1,5 @@
 import {InputText} from "primereact/inputtext";
-import {useState} from "react";
+import React, {useState} from "react";
 import {Button} from "primereact/button";
 
 import {postRequest} from "../utils/request"
@@ -18,14 +18,14 @@ export default function Register() {
         postRequest("auth/register", {...registerData}).then((res) => {
             isLoading(false)
         }).catch(({response: {data: {reason}}}) => {
-            console.log(reason[0].split('"'))
             isLoading(false)
         })
     }
 
     return (
-        <div className="container">
-            <div className="row w-50 m-auto">
+        <div className="container h-100 d-flex flex-column justify-content-center align-items-center ">
+            <h1 className="text-center">Register</h1>
+            <div className="row w-50">
                 <div className="mt-4 field">
                     <div className="p-inputgroup">
                         <span className="p-inputgroup-addon">
@@ -88,10 +88,8 @@ export default function Register() {
                     </div>
                 </div>
 
-                <Button label="Submit" onClick={submit} className="w-25 m-auto mt-4" loading={loading}/>
+                <Button label="Create account" onClick={submit} className="w-50 m-auto mt-4" loading={loading}/>
             </div>
         </div>
-
-
     );
 }

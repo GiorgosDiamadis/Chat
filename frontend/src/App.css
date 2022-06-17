@@ -1,3 +1,35 @@
-body{
-  background-color: #1E1E1E;
+body {
+    background-color: #1E1E1E;
+}
+
+h1 {
+    color: white;
+}
+
+.full-height {
+    height: calc(100vh - 41px);
+}
+
+.transparent {
+    background-color: transparent;
+    color: white;
+}
+
+.center {
+    /*position: relative;*/
+    /*transform: translateY(calc(50% - 41px));*/
+}
+
+
+.invalid {
+    border: 1px solid #E2877A;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.p-error {
+    position: absolute;
+    bottom: -20px;
 }

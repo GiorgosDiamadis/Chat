@@ -11,17 +11,23 @@ import "primereact/resources/themes/arya-orange/theme.css"; //theme
 import "primereact/resources/primereact.min.css"; //core css
 import "primeicons/primeicons.css";
 import './App.css';
+import AuthProvider from "./auth/useAuth";
+import AuthRoute from "./components/authRoute";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <>
         <BrowserRouter>
             <Navbar/>
-            <Routes>
-                <Route path="/" element={<App/>}/>
-                <Route path="login" element={<Login/>}/>
-                <Route path="register" element={<Register/>}/>
-            </Routes>
+            <AuthProvider>
+                <Routes>
+                    <Route path="/" element={<AuthRoute>
+                        <App/>
+                    </AuthRoute>}/>
+                    <Route path="login" element={<Login/>}/>
+                    <Route path="register" element={<Register/>}/>
+                </Routes>
+            </AuthProvider>
         </BrowserRouter>
     </>,
 );

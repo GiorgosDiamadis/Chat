@@ -8,6 +8,7 @@ services:
       - "8080:8080"
     volumes:
       - "./backend:/usr/app"
+#    command: npm run start:dev
     networks:
       - net
   frontend:
@@ -19,6 +20,7 @@ services:
       - "3000:3000"
     volumes:
       - "./frontend:/usr/app"
+#    command: npm run start
     networks:
       - net
   db:

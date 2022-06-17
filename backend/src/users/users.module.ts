@@ -4,6 +4,10 @@ import {User, UserSchema} from "./class/user";
 import {UsersController} from "./users.controller";
 import {UsersService} from "./service/users.service";
 import * as bcrypt from "bcrypt";
+import {JwtStrategy} from "../auth/strategy/jwt.strategy";
+import {JwtModule, JwtService} from "@nestjs/jwt";
+import {PassportModule} from "@nestjs/passport";
+import {JWT} from "../auth/constants";
 
 @Module({
     imports: [MongooseModule.forFeatureAsync([{
@@ -19,9 +23,13 @@ import * as bcrypt from "bcrypt";
             });
             return schema;
         }
-    }])],
+    }]), PassportModule,
+        JwtModule.register({
+            secret: JWT.secret,
+            signOptions: {expiresIn: '1h'}
+        })],
     controllers: [UsersController],
-    providers: [UsersService],
+    providers: [UsersService, JwtStrategy],
     exports: [UsersService]
 })
 
